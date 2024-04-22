@@ -1,0 +1,12 @@
+cd to the directory containing all the codes and type following commands in the termnal : 
+    javac *.java
+    rmiregistry
+Now open other terminal within same directory and run the following command
+    java MyServer.java
+Now again open other terminal in same directory and run the following command
+    java MyClient
+    Enter string 1 : 
+    Abc
+    Enter string 2 : 
+    XYZ
+    AbcXYZ
