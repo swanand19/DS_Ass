@@ -1,0 +1,37 @@
+1. What is Inter process communication?
+-> Interprocess communication (IPC) in a distributed system refers to the mechanisms and techniques used for communication between different processes running on 
+  separate nodes or machines within the distributed environment. This communication is essential for coordinating actions, sharing data, and synchronizing
+  activities among the various components of the distributed system. IPC allows processes to exchange information, send messages, and cooperate with each other to 
+  accomplish tasks. There are various methods of IPC in distributed systems, including message passing, remote procedure calls (RPC), shared memory, sockets, and
+  distributed objects.
+2. Difference between TCP and UDP socket communication? 
+-> TCP:
+      Connection-oriented
+      Reliable, ensures ordered delivery
+      Higher overhead
+      Provides flow and congestion control
+      Used for applications like web browsing, email, FTP
+  UDP:
+      Connectionless
+      Unreliable, no guaranteed delivery or order
+      Lower overhead
+      No flow or congestion control
+      Used for real-time applications like streaming, gaming, DNS, VoIP.
+3. What is shared memory programming? 
+-> Shared memory programming is a parallel programming paradigm where multiple processes or threads can access a common area of memory to communicate and share data
+  Instead of passing messages between processes, shared memory allows processes to communicate by reading and writing to the same memory locations.
+4.What is port? State application of port.
+->  a port is a logical construct used to uniquely identify a specific endpoint or communication channel in a networked system. Ports are associated with IP 
+    addresses
+    and are used to enable communication between different applications or services running on a single device or across multiple devices. Applications of ports 
+    include:
+  (i) Network Communication: Ports facilitate communication between client and server applications over a network.
+  (ii) Socket Programming: In socket programming, ports are used to establish communication endpoints for sending and receiving data between processes or 
+    applications.
+5. Explain the code.
+->RMI Lookup:
+    Concat stub = (Concat) Naming.lookup("localhost");: Looks up a remote object named "localhost" using RMI and casts it to the interface type Concat. This assumes
+    that there is an RMI registry running on the local host.
+  Remote Method Invocation:
+    System.out.println(stub.concat(x, y));: Calls the concat method on the remote object stub, passing the strings x and y as arguments, and prints the result to
+    the console. This assumes that the concat method is defined in the Concat interface.
