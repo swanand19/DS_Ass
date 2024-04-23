@@ -1,0 +1,46 @@
+1. In bully algorithm, Who is process coordinator? What are its responsibilities?
+-> In the bully algorithm, the process coordinator is the process with the highest priority or identifier. Its responsibilities include initiating leader elections,
+    handling responses from lower-priority processes during elections, coordinating system activities, detecting and recovering from process failures, and 
+    maintaining system consistency. As the leader, it ensures orderly task execution, resource allocation, and system integrity. If a higher-priority process 
+    exists, it gracefully steps down from the election process, acknowledging the new leader. Overall, the process coordinator plays a central role in ensuring 
+    the reliability, stability, and coordination of the distributed system.
+2. Need of Election Algorithm?
+-> Election algorithms are essential in distributed systems to select leaders dynamically, ensuring system continuity in the face of failures or changes. They 
+    enable fault tolerance by detecting failed processes and electing new leaders to take over responsibilities. Additionally, these algorithms aid in load 
+    balancing by evenly distributing workload among nodes and optimizing resource utilization. They facilitate consensus building by electing leaders responsible
+    for coordinating agreement among processes. Overall, election algorithms play a crucial role in maintaining system resilience, scalability, and performance in
+    distributed environments.
+3. Explain Election working of algorithm for Ring & Bully?
+-> a. Ring algorithm :
+      In the ring algorithm, each process in the distributed system is organized in a logical ring topology. To start the election process, a process detects that
+      the current leader has failed or is unreachable. It then initiates the election by sending an election message containing its own identifier (ID) around 
+      the ring.
+      Each process receiving the election message compares the sender's ID with its own. If the sender's ID is higher, it forwards the message; otherwise, it 
+      replaces the sender's ID with its own and continues forwarding the message.
+      The election message circulates around the ring until it reaches the initiating process, completing one round of the election.
+      The process with the highest ID, which has not received any higher ID during the election, declares itself as the new leader and notifies other processes in 
+      the ring.
+   b. Bully Algorithm : 
+      In the bully algorithm, each process is assigned a unique priority or identifier.
+      To start the election process, a process detects that the current leader has failed or is unreachable. It then initiates the election by sending an election
+      message to all processes with higher priorities.
+      Processes receiving the election message compare the sender's priority with their own. If the sender's priority is higher, they respond by acknowledging the
+      election and relinquishing their candidacy.
+      If a process does not receive any responses, it declares itself as the new leader and sends a coordinator message to all lower-priority processes.
+      Lower-priority processes update their leader information upon receiving the coordinator message, completing the election process.
+4. What is „Token‟?
+-> In the context of distributed systems and algorithms like token-based protocols, a "token" refers to a special message or token object that is passed between
+    processes or nodes in a network. The token serves as a permission or control mechanism, granting the holder the right to perform a certain action or access a 
+    shared resource.
+5. Explain the code : 
+-> a. up Method:
+        This method brings a process up by setting its corresponding entry in the state array to true.
+        It then initiates an election by sending election messages to all processes with higher IDs.
+        If any higher-priority process responds, indicating that it is up, the process acknowledges it and stops the election.
+   b. down Method:
+        This method brings a process down by setting its corresponding entry in the state array to false.
+   c. mess Method:
+        This method simulates the sending of a message by a process.
+        If the process sending the message is up and the coordinator is up (process 5), it sends an "OK" message.
+        If the coordinator is down, it initiates an election by sending election messages to higher-priority processes and waits for a response. If no response
+        is received, it declares itself as the new coordinator and sends a coordinator message to all processes.
