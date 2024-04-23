@@ -1,0 +1,28 @@
+Step 1 – Run Server Program and keep it running till we connect the clients.
+
+Step 2– Open new Command prompt and Run ClientOne Program on it and keep it running till
+ClientTwo starts.
+
+Step 3– Open one more Command prompt to Run ClientTwo Program. The output allows both
+the clients to use token and share their messages with each other using Token Ring. To send the
+message, the client has to accept the token by typing type Yes followed by the message alternately and has to type No to release the token.
+
+
+c:\javac MutualServer.java
+
+c:\javac ClientOne.java
+
+c:\javac ClientTwo.java
+
+
+Step 4 – Run Server Program and keep it running till we connect the clients.
+c:\java MutualServer
+
+Step 5 – Open new Command prompt and Run ClientOne Program on it and keep it running till
+ClientTwo starts.
+c:\java ClientOne
+Step 6 – Open one more Command prompt to Run ClientTwo Program. The output allows both
+the
+clients to use token and share their messages with each other using Token Ring. To send the
+message,
+c:\java ClientTwo
