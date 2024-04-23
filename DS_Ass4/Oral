@@ -1,0 +1,20 @@
+1. What is difference between logical clock and physical clock? 
+-> a. Physical Clocks : 
+      Physical clocks are based on real-time hardware mechanisms such as oscillators or quartz crystals. They provide an accurate representation of real-world time
+      and are synchronized with the global time reference. eg. wrist watches, etc.
+   b. Logical Clocks : 
+      Logical clocks are not bound to physical time but rather aim to provide a relative ordering of events within a distributed system. eg. Lamport clocks, vector 
+      clocks, etc.
+2. Why is it necessary to synchronize the clocks in distributed real time system? 
+-> a. Event Ordering: Synchronized clocks ensure that events occurring across different nodes or components of the system are correctly ordered. Without synchronized
+      clocks, it becomes challenging to determine the causal relationships between events accurately.
+   b. Consistency and Replication: In replicated systems, synchronized clocks are essential for maintaining consistency among replicas. Synchronized clocks ensure that 
+      updates and changes are applied in the correct order across all replicas, preventing divergence and inconsistency.
+   c. Security and Authentication: Synchronized clocks are crucial for security protocols such as authentication and authorization. They help in enforcing time-based 
+      access controls, preventing replay attacks, and ensuring the integrity of cryptographic operations.
+3. How the principle of Berkeley algorithm is used to synchronize time in distributed system?
+-> The Berkeley algorithm synchronizes time in distributed systems by having a coordinator collect time readings from all nodes, calculate the average time, determine 
+    the time difference between each node's clock and the average, and then broadcast these differences for each node to adjust its clock accordingly. This iterative 
+    process minimizes time deviation among all nodes.
+4. Explain the code : 
+-> 
