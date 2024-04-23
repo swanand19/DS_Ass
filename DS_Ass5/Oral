@@ -1,0 +1,18 @@
+1. In token ring based mutual exclusion algorithm, What is race condition? 
+-> In a token ring-based mutual exclusion algorithm, a race condition can occur when multiple processes or nodes attempt to access and modify a shared resource 
+    simultaneously or without proper coordination. This can lead to unpredictable or incorrect behavior of the system, potentially resulting in data corruption or 
+    inconsistency. In the context of a token ring-based mutual exclusion algorithm, the race condition typically arises when multiple processes contend for ownership 
+    of the token, which grants exclusive access to the shared resource. If two or more processes attempt to acquire the token simultaneously, there may be a race to 
+    gain ownership, leading to conflicts and potential inconsistency in the system's state.
+2. What is deadlock and starvation? 
+-> a. Deadlock :
+      Deadlock is a situation where two or more processes or threads are unable to proceed because each is waiting for the other to release a resource or take some 
+      action. In a deadlock, each process holds a resource that another process needs to continue execution, creating a circular dependency and preventing any 
+      progress.
+   b. Starvation : 
+      Starvation occurs when a process or thread is unable to gain access to a resource it needs to execute, despite repeated attempts. In a starvation scenario, 
+      the resource is continuously being allocated to other processes, preventing the starved process from making progress.
+3. What is Mutual Exclusion? 
+-> Mutual exclusion is a synchronization technique that ensures only one process or thread accesses a shared resource at a time. This prevents concurrent access 
+    that could lead to data inconsistency or corruption.
+4. Explain the code : 
