@@ -1,0 +1,53 @@
+1. Explain Architecture of web services w. r. to Provider, Requestor, Service registry and Broker?
+-> a. Provider:
+        The provider is responsible for creating and hosting the web service. It exposes functionalities or resources that can be accessed by requestors over the 
+        network.
+        Providers implement the business logic and functionality of the service, define the service interface (e.g., WSDL), and deploy the service on a server.
+   b. Requestor:
+        The requestor is a client application or system that consumes the web service provided by the provider.
+        Requestors interact with the web service by sending requests over the network using standardized protocols such as HTTP, SOAP, or REST.
+        Requestors typically access the service's functionalities by invoking methods or operations defined in the service interface.
+   c. Service Registry:
+        The service registry is a central repository or directory that stores metadata and information about available web services.
+        It provides a catalog of services, including their descriptions, endpoints, and capabilities, making it easier for requestors to discover and locate 
+        suitable services.
+        Service registries may use standards such as UDDI (Universal Description, Discovery, and Integration) or service metadata formats like WSDL to describe
+        services.
+   d. Broker:
+        The broker acts as an intermediary between requestors and providers, facilitating service discovery, selection, and invocation.
+        It helps requestors find suitable services by querying the service registry based on criteria such as service type, capabilities, or quality of service (QoS) 
+        parameters.
+        Brokers may implement additional functionalities such as service composition, mediation, security, and monitoring to enhance the interaction between 
+        requestors and providers.
+2.  What is WSDL? 
+-> WSDL, or Web Services Description Language, is an XML-based language used to describe the interface and functionalities of web services. It defines the 
+    operations provided by the service, including their input and output parameters, as well as any errors or faults that may occur. WSDL documents serve as a 
+    contract between service providers and consumers, enabling interoperability by specifying how clients can interact with the service. They describe the message
+    formats and transport protocols used for communication between clients and the service, such as SOAP over HTTP. WSDL plays a crucial role in facilitating the
+    discovery, integration, and invocation of web services across heterogeneous systems and platforms.
+3. Differentiate between SOAP and REST? 
+-> a. Protocol vs. Architecture:
+        SOAP is a protocol, defining a set of rules for structuring messages, communication, and XML-based format for exchanging information between systems.
+        REST is an architectural style, guiding the design of networked systems, emphasizing stateless communication, and utilizing existing HTTP methods for 
+        data manipulation.
+   b. Message Format:
+        SOAP messages are typically XML-based and can be quite verbose due to their extensive envelope structure, which includes headers and bodies.
+        RESTful services use a variety of formats such as JSON, XML, or plain text, offering more flexibility in message representation and serialization.
+   c. State:
+        SOAP is often designed with the concept of maintaining state between requests, using features like sessions and security tokens to manage client-server 
+        interactions.
+        REST is stateless by nature, meaning each request from a client to the server must contain all the information necessary to understand and process the 
+        request.
+   d. Operations:
+        SOAP defines a set of standardized operations, such as Create, Read, Update, and Delete (CRUD), which are encapsulated within the SOAP message body.
+        RESTful services typically use standard HTTP methods (GET, POST, PUT, DELETE) to perform operations on resources, with each method representing a 
+        specific action.
+   e. Performance and Scalability:
+        SOAP messages tend to be more heavyweight due to their XML format and additional overhead for headers and envelopes, which can impact performance and 
+        scalability.
+        RESTful services are often more lightweight and efficient, as they leverage existing HTTP protocols and can utilize caching and other optimizations to
+        improve performance.
+   f. Flexibility and Compatibility:
+        SOAP offers a high level of extensibility and supports complex operations and security features, making it suitable for enterprise-level applications.
+        REST is more flexible and simpler to implement, making it a preferred choice for web APIs, mobile applications, and scenarios where lightweight 
+        communication is desired.
