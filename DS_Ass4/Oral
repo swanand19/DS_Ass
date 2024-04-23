@@ -17,4 +17,7 @@
     the time difference between each node's clock and the average, and then broadcast these differences for each node to adjust its clock accordingly. This iterative 
     process minimizes time deviation among all nodes.
 4. Explain the code : 
--> 
+-> a. sync Method:
+      This method adjusts the time of the time server and each node based on the average time difference.
+      It takes arrays representing the time of each node, the time server, and the average time difference as parameters.
+      It adjusts the time of each node and the time server by adding the average time difference, handling overflow and underflow for hours, minutes, and seconds.
